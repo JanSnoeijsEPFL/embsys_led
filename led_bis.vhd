@@ -43,6 +43,7 @@ architecture rtl of led is
 	-- 4 first bits are encoding the number of the LED. (0000--> LED15 1111-->LED0)
 	-- 2 last bits encode the color (00--> BLUE, 01--> RED, 10--> GREEN)
 	-- the address of the control register is : "000011"
+	-- the control register is set like this ("01" -> start, "00" --> ready, "11"--> busy) You can write "01" in the control register, the 2 other values are set internally.
 	-- the other 15 addresses are unused and have the following code ("XXXX11" except "000011")
 	
 	-- The mapping is controlled by the DPU_REG process but I will have to modify it.
